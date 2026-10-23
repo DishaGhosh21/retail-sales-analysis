@@ -1,0 +1,11 @@
+-- Retail Sales Analysis
+
+-- 1. Total revenue
+SELECT SUM(quantity * price) AS total_revenue
+FROM retail_sales;
+
+-- 2. Top-selling products
+SELECT product_name, SUM(quantity) AS units_sold
+FROM retail_sales
+GROUP BY product_name
+ORDER BY units_sold DESC;
